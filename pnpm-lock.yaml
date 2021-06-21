@@ -454,24 +454,32 @@ importers:
   packages/core/server:
     specifiers:
       '@verdaccio/auth': workspace:6.0.0-6-next.11
+      '@verdaccio/commons-api': workspace:11.0.0-6-next.4
       '@verdaccio/config': workspace:6.0.0-6-next.8
       '@verdaccio/logger': workspace:6.0.0-6-next.4
       '@verdaccio/store': workspace:6.0.0-6-next.12
+      '@verdaccio/tarball': workspace:11.0.0-6-next.7
       '@verdaccio/types': workspace:11.0.0-6-next.8
+      '@verdaccio/utils': workspace:6.0.0-6-next.6
       core-js: 3.17.2
       debug: 4.3.2
       fastify: 3.20.2
       fastify-plugin: 3.0.0
+      lodash: 4.17.21
       ts-node: 10.2.1
     dependencies:
       '@verdaccio/auth': link:../../auth
+      '@verdaccio/commons-api': link:../commons-api
       '@verdaccio/config': link:../../config
       '@verdaccio/logger': link:../../logger
       '@verdaccio/store': link:../../store
+      '@verdaccio/tarball': link:../tarball
+      '@verdaccio/utils': link:../../utils
       core-js: 3.17.2
       debug: 4.3.2
       fastify: 3.20.2
       fastify-plugin: 3.0.0
+      lodash: 4.17.21
     devDependencies:
       '@verdaccio/types': link:../types
       ts-node: 10.2.1_7cfd01fcff41d818ce82373ba3c4f1b7
@@ -12120,7 +12128,6 @@ packages:
 
   /highlight.js/9.18.5:
     resolution: {integrity: sha512-a5bFyofd/BHCX52/8i8uJkjr9DYwXIPnM/plwI6W7ezItLGqzt7X2G2nXuYSfsIJdkwwj/g9DG1LkcGJI/dDoA==}
-    deprecated: Support has ended for 9.x series. Upgrade to @latest
     requiresBuild: true
     dev: true
 

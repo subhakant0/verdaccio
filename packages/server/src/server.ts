@@ -7,7 +7,7 @@ import RateLimit from 'express-rate-limit';
 import { HttpError } from 'http-errors';
 
 import { loadPlugin } from '@verdaccio/loaders';
-import { Auth } from '@verdaccio/auth';
+import { Auth, IAuth, IBasicAuth } from '@verdaccio/auth';
 import apiEndpoint from '@verdaccio/api';
 import { ErrorCode } from '@verdaccio/utils';
 import { API_ERROR, HTTP_STATUS } from '@verdaccio/commons-api';
