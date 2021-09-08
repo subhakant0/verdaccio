@@ -7,7 +7,7 @@ import RateLimit from 'express-rate-limit';
 import { HttpError } from 'http-errors';
 
 import { loadPlugin } from '@verdaccio/loaders';
-import { Auth, IAuth, IBasicAuth } from '@verdaccio/auth';
+import { Auth, IBasicAuth } from '@verdaccio/auth';
 import apiEndpoint from '@verdaccio/api';
 import { ErrorCode } from '@verdaccio/utils';
 import { API_ERROR, HTTP_STATUS } from '@verdaccio/commons-api';
@@ -16,7 +16,6 @@ import { Config as AppConfig } from '@verdaccio/config';
 import webMiddleware from '@verdaccio/web';
 import { ConfigRuntime } from '@verdaccio/types';
 
-import { IAuth, IBasicAuth } from '@verdaccio/auth';
 import { Storage } from '@verdaccio/store';
 import { logger } from '@verdaccio/logger';
 import { log, final, errorReportingMiddleware } from '@verdaccio/middleware';
@@ -34,7 +33,7 @@ export interface IPluginMiddleware<T> extends IPlugin<T> {
 const debug = buildDebug('verdaccio:server');
 
 const defineAPI = function (config: IConfig, storage: Storage): any {
-  const auth: IAuth = new Auth(config);
+  const auth: Auth = new Auth(config);
   const app: Application = express();
   const limiter = new RateLimit(config.serverSettings.rateLimit);
   // run in production mode by default, just in case
