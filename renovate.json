@@ -1,0 +1,135 @@
+{
+  "extends": ["config:base", "schedule:earlyMondays"],
+  "prConcurrentLimit": 1,
+  "ignorePaths": ["docker-examples/**"],
+  "ignoreDeps": ["eslint-plugin-verdaccio", "@verdaccio/helper"],
+  "baseBranches": ["master", "5.x"],
+  "major": true,
+  "labels": ["bot: dependencies"],
+  "packageRules": [
+    {
+      "packageNames": ["aws-sdk"],
+      "allowedVersions": "2.607.0"
+    },
+    {
+      "packageNames": ["@google-cloud/datastore"],
+      "allowedVersions": "4.5.0"
+    },
+    {
+      "packageNames": ["@google-cloud/storage"],
+      "allowedVersions": "3.5.0"
+    },
+    {
+      "packageNames": ["fast-crc32c"],
+      "allowedVersions": "1.0.7"
+    },
+    {
+      "packageNames": ["esbuild"],
+      "allowedVersions": "0.14.10"
+    },
+    {
+      "packageNames": ["esbuild-loader"],
+      "allowedVersions": "2.16.0"
+    },
+    {
+      "packageNames": ["lowdb"],
+      "allowedVersions": "1.0.0"
+    },
+    {
+      "packageNames": ["node-fetch"],
+      "allowedVersions": "< 3.0.0"
+    },
+    {
+      "packageNames": ["@changesets/cli"],
+      "allowedVersions": "2.15.0"
+    },
+    {
+      "matchDatasources": ["docker"],
+      "labels": ["bot: docker-update"]
+    },
+    {
+      "matchDatasources": ["crazy-max/ghaction-docker-meta"],
+      "allowedVersions": "1.12.0"
+    },
+    {
+      "matchDatasources": ["react-router"],
+      "allowedVersions": "5.2.1"
+    },
+    {
+      "matchDatasources": ["react-router-dom"],
+      "allowedVersions": "5.2.1"
+    },
+    {
+      "matchDatasources": ["actions/github-script"],
+      "allowedVersions": "v3"
+    },
+    {
+      "matchDatasources": ["lint-staged"],
+      "allowedVersions": "11.2.6"
+    },
+    {
+      "matchDatasources": ["get-port"],
+      "allowedVersions": "5.1.1"
+    },
+    {
+      "matchPackagePatterns": [
+        "@types/*",
+        "typescript",
+        "@babel/*",
+        "fast-safe-stringify",
+        "undici",
+        "verdaccio*",
+        "webpack",
+        "async",
+        "memfs",
+        "globby",
+        "pnpm",
+        "esbuild",
+        "@emotion/*",
+        "async",
+        "@mui/*",
+        "express*",
+        "http-status",
+        "babel-*",
+        "jest",
+        "jest-*",
+        "pino",
+        "react*",
+        "ts-node",
+        "mini-css*",
+        "autocannon",
+        "process-warning",
+        "fastify",
+        "core-js",
+        "debug",
+        "nock",
+        "rimraf",
+        "node-fetch",
+        "kleur",
+        "fs-extra",
+        "self-signed",
+        "supertest"
+      ],
+      "matchUpdateTypes": ["minor", "patch", "major"],
+      "groupName": "all core dependencies",
+      "groupSlug": "all-core-dependencies",
+      "extends": [":semanticCommitTypeAll(fix)"],
+      "baseBranchList": ["master"]
+    },
+    {
+      "matchPackagePatterns": [
+        "@trivago/*",
+        "prettier",
+        "eslint-*",
+        "eslint",
+        "stylelint",
+        "@typescript-eslint/*"
+      ],
+      "matchUpdateTypes": ["minor", "patch", "major"],
+      "groupName": "all linting dependencies",
+      "groupSlug": "all-linting",
+      "baseBranchList": ["master"]
+    }
+  ],
+  "pinVersions": false
+}
