@@ -8,12 +8,14 @@ The following examples aim to be demonstrative and can be either improved or upd
 
 - [v4 examples](v4/README.md)
 - [v5 examples](v5/README.md)
+- [v6 examples](v6/README.md)
 
 ## Aditional data
 
 This folder aims to create a collection of Docker and Kubernetes examples.
 
 For more information about the **Helm** Chart, please check it [owns repo](https://github.com/verdaccio/charts).
+
 ### Kubernetes
 
 - Kubernetes (minikube) + Verdaccio (Basic Configuration)
